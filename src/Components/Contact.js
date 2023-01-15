@@ -10,30 +10,21 @@ const Contact = () => {
     e.preventDefault();
     e.target.reset();
 
-    emailjs
-      .sendForm(
-        "service_zxblubb",
-        "template_e978ymi",
-        form.current,
-        "sMKLDD5lg_u6LsqGQ"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Thank you. Your Mail Sent Seccessful.");
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Something is wrong. please try it again.");
-        }
-      );
+    emailjs.sendForm("service_zxblubb", "template_e978ymi", form.current, "sMKLDD5lg_u6LsqGQ").then(
+      (result) => {
+        console.log(result.text);
+        toast.success("Thank you. Your Mail Sent Seccessful.");
+      },
+      (error) => {
+        console.log(error.text);
+        toast.error("Something is wrong. please try it again.");
+      }
+    );
   };
   return (
     <div id="contacts" className="max-w-[1240px] md:h-screen mx-auto p-4">
       <div data-aos="fade-right" data-aos-duration="1500">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
-          Contact Me
-        </p>
+        <p className="text-xl tracking-widest uppercase text-[#5651e5]">Contact Me</p>
         <h2 className="py-4">Get In Touch</h2>
       </div>
       <div className="bg-gray-400 rounded-2xl p-5">
